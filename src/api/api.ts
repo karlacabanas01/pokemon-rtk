@@ -14,6 +14,15 @@ interface PokemonDetailData {
   name: string;
   height: number;
   weight: number;
+  stats: Array<{
+    base_stat: number;
+    effort: number;
+    stat: {
+      name: string;
+      url: string;
+    };
+  }>;
+
   types: Array<{
     slot: number;
     type: {
@@ -21,8 +30,14 @@ interface PokemonDetailData {
       url: string;
     };
   }>;
+
   sprites: {
     front_default: string;
+    other: {
+      dream_world: {
+        front_default: string;
+      };
+    };
   };
 }
 

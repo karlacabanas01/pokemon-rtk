@@ -1,12 +1,18 @@
 import React from 'react';
 import { usePokemonListQuery } from "../api/api";
+import './styles.css';
 
 function PokemonList({ onPokemonSelected, }: { onPokemonSelected: (pokemonName: string) => void; }) {
     const { isUninitialized, isLoading, isError, isSuccess, data } =
         usePokemonListQuery();
 
     if (isLoading || isUninitialized) {
-        return <p>loading, please wait</p>;
+        return (
+            <div className="loading-container" >
+                <div className="loading-circle"></div>
+            </div >
+        )
+
     }
 
     if (isError) {
@@ -14,18 +20,17 @@ function PokemonList({ onPokemonSelected, }: { onPokemonSelected: (pokemonName: 
     }
 
     return (
-        <article>
+        <div className='container'>
             <h2>Overview</h2>
-            <ol start={1}>
+            <div className='containerButton'>
+
                 {data.results.map((pokemon) => (
-                    <li key={pokemon.name}>
-                        <button onClick={() => onPokemonSelected(pokemon.name)}>
-                            {pokemon.name}
-                        </button>
-                    </li>
+                    <button key={pokemon.name} className='button' onClick={() => onPokemonSelected(pokemon.name)}>
+                        {pokemon.name}
+                    </button>
                 ))}
-            </ol>
-        </article>
+            </div>
+        </div >
     );
 }
 

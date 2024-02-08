@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-container {
+  font-size: 2rem;
+  font-family: "Protest Strike", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-right: 90px;
+}
+
+.button {
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  margin: 5px 0;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 10px 3px rgba(242, 255, 0, 0.901);
+}
+
+.containerButton {
+  display: flex;
+  flex-direction: column;
+  max-width: min-content;
+  align-content: center;
+}
+
+/*POKEMON CARD*/
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  max-width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.pokemon-card img {
+  max-width: 100%;
+  margin-bottom: 10px;
+  animation: moveImage 10s normal;
+}
+
+.pokemon-card h2 {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+
+.pokemon-p {
+  display: flex;
+  flex-direction: row;
+  text-transform: capitalize;
+}
+
+.pokemon-pill {
+  display: flex;
+  align-items: center;
+  max-width: 60px;
+  max-height: 30px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  background: rgb(186, 118, 213);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.pokemon-pill-type {
+  display: flex;
+  max-width: 60px;
+  max-height: 30px;
+  padding: 6px 8px;
+  border-radius: 10px;
+  background: rgb(175, 155, 183);
+  color: #ffffff;
+  font-weight: 500;
+  text-transform: lowercase;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.poke-text {
+  margin-right: 20px;
+}
+
+@keyframes moveImage {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-150px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* LOADING */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-circle {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #3498db;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
